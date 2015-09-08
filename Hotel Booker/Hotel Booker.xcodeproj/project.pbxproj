@@ -85,8 +85,6 @@
 				22DAD2831B9E28ED00B0DE6B /* AppDelegate.m */,
 				22DAD2881B9E28ED00B0DE6B /* ViewController.h */,
 				22DAD2891B9E28ED00B0DE6B /* ViewController.m */,
-				22DAD28E1B9E28ED00B0DE6B /* Images.xcassets */,
-				22DAD2901B9E28ED00B0DE6B /* LaunchScreen.xib */,
 				22DAD2851B9E28ED00B0DE6B /* Hotel_Booker.xcdatamodeld */,
 				22DAD27E1B9E28ED00B0DE6B /* Supporting Files */,
 			);
@@ -96,6 +94,8 @@
 		22DAD27E1B9E28ED00B0DE6B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				22DAD28E1B9E28ED00B0DE6B /* Images.xcassets */,
+				22DAD2901B9E28ED00B0DE6B /* LaunchScreen.xib */,
 				22DAD27F1B9E28ED00B0DE6B /* Info.plist */,
 				22DAD2801B9E28ED00B0DE6B /* main.m */,
 			);
