@@ -5,6 +5,7 @@
         <relationship name="reservation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Reservation" inverseName="guest" inverseEntity="Reservation" syncable="YES"/>
     </entity>
     <entity name="Hotel" representedClassName="Hotel" syncable="YES">
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="stars" attributeType="Integer 16" minValueString="1" maxValueString="5" defaultValueString="3" syncable="YES"/>
         <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Room" inverseName="hotel" inverseEntity="Room" syncable="YES"/>
@@ -15,14 +16,16 @@
         <relationship name="room" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="reservations" inverseEntity="Room" syncable="YES"/>
     </entity>
     <entity name="Room" representedClassName="Room" syncable="YES">
+        <attribute name="beds" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="number" attributeType="Integer 16" minValueString="1" defaultValueString="1" syncable="YES"/>
+        <attribute name="rate" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="hotel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hotel" inverseName="rooms" inverseEntity="Hotel" syncable="YES"/>
         <relationship name="reservations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Reservation" inverseName="room" inverseEntity="Reservation" syncable="YES"/>
     </entity>
     <elements>
         <element name="Guest" positionX="-1829" positionY="-2173" width="128" height="73"/>
-        <element name="Hotel" positionX="-2358" positionY="-2259" width="128" height="88"/>
+        <element name="Hotel" positionX="-2358" positionY="-2259" width="128" height="103"/>
         <element name="Reservation" positionX="-2000" positionY="-2196" width="128" height="88"/>
-        <element name="Room" positionX="-2187" positionY="-2224" width="128" height="88"/>
+        <element name="Room" positionX="-2187" positionY="-2224" width="128" height="118"/>
     </elements>
 </model>

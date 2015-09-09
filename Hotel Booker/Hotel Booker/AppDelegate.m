@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "MainMenuViewController.h"
 #import "Hotel.h"
 #import "Room.h"
 
@@ -27,15 +27,15 @@
   [self.window makeKeyAndVisible];
   
   //Create ViewController
-  UIViewController *viewController = [[ViewController alloc] init];
-  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+  UIViewController *mainMenuViewController = [[MainMenuViewController alloc] init];
+  UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
   self.window.rootViewController = navigationController;
   
   return YES;
 }
 
 - (void)seedCoreDataIfNeeded {
-  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"hotel"];
+  NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
   
   NSError *fetchError;
   NSInteger count = [self.managedObjectContext countForFetchRequest:fetchRequest error:&fetchError];
@@ -47,56 +47,77 @@
     NSError *jsonError;
     
     NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&jsonError];
-    
-    Hotel *hotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
-    hotel.name = @"St. Regis";
-    hotel.stars = @5;
-    
-    Room *room1 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
-    room1.number = @1;
-    Room *room2 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
-    room2.number = @2;
-    Room *room3 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
-    room3.number = @3;
-    
-    NSSet *rooms = [[NSSet alloc] initWithObjects:room1, room2, room3, nil];
-    [hotel addRooms:rooms];
-    
-    Hotel *hotel2 = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
-    hotel2.name = @"The Ritz-Carlton";
-    hotel2.stars = @5;
-    
-    Room *room4 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
-    room4.number = @4;
-    Room *room5 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
-    room5.number = @5;
-    Room *room6 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
-    room6.number = @6;
-    
-    NSSet *rooms1 = [[NSSet alloc] initWithObjects:room4, room5, room6, nil];
-    [hotel2 addRooms:rooms1];
-    
-    
-    Hotel *hotel3 = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
-    hotel3.name = @"The Laguna Cliffs Marriott Resort";
-    hotel3.stars = @4;
-    
-    Room *room7 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
-    room7.number = @7;
-    Room *room8 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
-    room8.number = @8;
-    Room *room9 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
-    room9.number = @9;
-    
-    NSSet *rooms2 = [[NSSet alloc] initWithObjects:room7, room8, room9, nil];
-    [hotel3 addRooms:rooms2];
-    
-    
-    NSError *saveError;
-    BOOL result = [self.managedObjectContext save:&saveError];
-    if (!result) {
-      NSLog(@" %@",saveError.localizedDescription);
+    NSArray *hotels = [rootObject objectForKey:@"Hotels"];
+    for(NSDictionary* jsonHotel in hotels) {
+      Hotel *hotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
+      hotel.name = [jsonHotel objectForKey:@"name"];
+      hotel.stars = [jsonHotel objectForKey:@"stars"];
+      NSArray *rooms = [jsonHotel objectForKey:@"rooms"];
+      for(NSDictionary* jsonRoom in rooms) {
+        Room *room = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+        room.number = [jsonRoom objectForKey:@"number"];
+        room.beds = [jsonRoom objectForKey:@"beds"];
+        room.rate = [jsonRoom objectForKey:@"rate"];
+        
+        [hotel addRoomsObject:room];
+      }
+      
+      NSError *saveError;
+      BOOL result = [self.managedObjectContext save:&saveError];
+      if (!result) {
+        NSLog(@" %@",saveError.localizedDescription);
+      }
     }
+    
+//    Hotel *hotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
+//    hotel.name = @"St. Regis";
+//    hotel.stars = @5;
+//    
+//    Room *room1 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+//    room1.number = @1;
+//    Room *room2 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+//    room2.number = @2;
+//    Room *room3 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+//    room3.number = @3;
+//    
+//    NSSet *rooms = [[NSSet alloc] initWithObjects:room1, room2, room3, nil];
+//    [hotel addRooms:rooms];
+//    
+//    Hotel *hotel2 = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
+//    hotel2.name = @"The Ritz-Carlton";
+//    hotel2.stars = @5;
+//    
+//    Room *room4 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+//    room4.number = @4;
+//    Room *room5 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+//    room5.number = @5;
+//    Room *room6 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+//    room6.number = @6;
+//    
+//    NSSet *rooms1 = [[NSSet alloc] initWithObjects:room4, room5, room6, nil];
+//    [hotel2 addRooms:rooms1];
+//    
+//    
+//    Hotel *hotel3 = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel" inManagedObjectContext:self.managedObjectContext];
+//    hotel3.name = @"The Laguna Cliffs Marriott Resort";
+//    hotel3.stars = @4;
+//    
+//    Room *room7 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+//    room7.number = @7;
+//    Room *room8 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+//    room8.number = @8;
+//    Room *room9 = [NSEntityDescription insertNewObjectForEntityForName:@"Room" inManagedObjectContext:self.managedObjectContext];
+//    room9.number = @9;
+//    
+//    NSSet *rooms2 = [[NSSet alloc] initWithObjects:room7, room8, room9, nil];
+//    [hotel3 addRooms:rooms2];
+//    
+//    
+//    NSError *saveError;
+//    BOOL result = [self.managedObjectContext save:&saveError];
+//    if (!result) {
+//      NSLog(@" %@",saveError.localizedDescription);
+//    }
   }
 }
 

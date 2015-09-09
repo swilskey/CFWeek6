@@ -44,6 +44,7 @@
   self.appDelegate = [UIApplication sharedApplication].delegate;
   
   self.rooms = [[NSArray alloc] initWithArray:[self.hotel.rooms allObjects]];
+  NSLog(@"Room Count: %lu", (unsigned long)self.rooms.count);
   
 
 }
@@ -67,6 +68,7 @@
   }
   
   Room *room = [self.rooms objectAtIndex:indexPath.row];
+
   cell.textLabel.text = [NSString stringWithFormat:@"%@",room.number];
   
   return cell;

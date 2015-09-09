@@ -15,6 +15,7 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSNumber * stars;
+@property (nonatomic, retain) NSString * location;
 @property (nonatomic, retain) NSSet *rooms;
 @end
 

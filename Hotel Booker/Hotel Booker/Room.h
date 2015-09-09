@@ -13,7 +13,9 @@
 
 @interface Room : NSManagedObject
 
-@property (nonatomic, retain) NSNumber *number;
+@property (nonatomic, retain) NSNumber * number;
+@property (nonatomic, retain) NSNumber * beds;
+@property (nonatomic, retain) NSNumber * rate;
 @property (nonatomic, retain) Hotel *hotel;
 @property (nonatomic, retain) NSSet *reservations;
 @end
