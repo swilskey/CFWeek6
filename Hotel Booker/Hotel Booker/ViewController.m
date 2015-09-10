@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "RoomViewController.h"
 #import "AppDelegate.h"
+#import "CoreDataStack.h"
 #import "Hotel.h"
 
 #import <CoreData/CoreData.h>
@@ -55,7 +56,7 @@
   NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
   
   NSError *fetchError;
-  self.hotels = [self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
+  self.hotels = [self.appDelegate.coreDataStack.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
 }
 
 - (void)didReceiveMemoryWarning {

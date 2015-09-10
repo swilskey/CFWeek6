@@ -49,7 +49,7 @@
   [self.lookUpReservationsButton setBackgroundColor:[UIColor lightGrayColor]];
   [self.rootView addSubview:self.lookUpReservationsButton];
   
-  [self setAutoLayout];
+  [self setUpConstraints];
   
   self.view = self.rootView;
 }
@@ -80,7 +80,9 @@
   }
 }
 
--(void)setAutoLayout {
+#pragma mark - Setup Constraints
+
+-(void)setUpConstraints {
   NSDictionary *views = @{@"browseHotelsButton":self.browseHotelsButton,@"bookARoomButton":self.bookARoomButton,@"lookUpReservationButton":self.lookUpReservationsButton};
   
   

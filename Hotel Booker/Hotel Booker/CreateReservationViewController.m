@@ -18,6 +18,10 @@
 @property (strong,nonatomic) UITextField *startDateField;
 @property (strong,nonatomic) UITextField *endDateField;
 @property (strong,nonatomic) UIBarButtonItem *barDoneButton;
+@property (strong,nonatomic) UIButton *confirmDatesButton;
+
+@property (strong,nonatomic) NSDate *startDate;
+@property (strong,nonatomic) NSDate *endDate;
 
 @end
 
@@ -42,12 +46,13 @@
   self.pickerToolbar.translucent = true;
   [self.pickerToolbar sizeToFit];
   
-  self.barDoneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(donePicker)];
+  self.barDoneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self.datePicker action:@selector(donePicker:)];
   NSArray *barItems = [[NSArray alloc] initWithObjects:self.barDoneButton, nil];
+  [self.pickerToolbar setItems:barItems animated:true];
   
   self.datePicker = [[UIDatePicker alloc] init];
   [self.datePicker setUserInteractionEnabled:true];
-  [self.pickerToolbar setItems:barItems animated:true];
+  self.datePicker.datePickerMode = UIDatePickerModeDate;
   
   self.startDateField = [[UITextField alloc] init];
   self.startDateField.borderStyle = UITextBorderStyleRoundedRect;
@@ -65,10 +70,19 @@
   [self.endDateField setTranslatesAutoresizingMaskIntoConstraints:false];
   [self.rootView addSubview:self.endDateField];
   
+  self.confirmDatesButton = [[UIButton alloc] init];
+  [self.confirmDatesButton setTitle:@"Confirm Dates" forState:UIControlStateNormal];
+  [self.confirmDatesButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+  [self.confirmDatesButton setBackgroundColor:[UIColor lightGrayColor]];
+  [self.confirmDatesButton addTarget:self action:@selector(confirmDatesAction:) forControlEvents:UIControlEventTouchUpInside];
+  [self.confirmDatesButton setTranslatesAutoresizingMaskIntoConstraints:false];
+  [self.rootView addSubview:self.confirmDatesButton];
+  
   [self setUpConstraints];
   
   self.view = self.rootView;
 }
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   
@@ -82,12 +96,35 @@
   [super didReceiveMemoryWarning];
   // Dispose of any resources that can be recreated.
 }
-- (void)donePicker {
+
+- (void)donePicker:(UIDatePicker *)sender {
+  if ([self.startDateField isFirstResponder]) {
+    
+    [self.startDateField resignFirstResponder];
+    self.startDate = self.datePicker.date;
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"cccc, MMM d, hh:mm aa"];
+    NSString *prettyVersion = [dateFormat stringFromDate:self.startDate];
+    self.startDateField.text = prettyVersion;
+  } else if ([self.endDateField isFirstResponder]) {
+    
+    [self.endDateField resignFirstResponder];
+    self.endDate = self.datePicker.date;
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"cccc, MMM d, hh:mm aa"];
+    NSString *prettyVersion = [dateFormat stringFromDate:self.endDate];
+    self.endDateField.text = prettyVersion;
+  }
+}
+
+- (void)confirmDatesAction:(UIButton *)sender {
   
 }
 
+#pragma mark - Constraint Setups
+
 - (void)setUpConstraints {
-  NSDictionary *views = @{@"startDateLabel":self.startDateLabel, @"startDateField":self.startDateField, @"endDateLabel":self.endDateLabel, @"endDateField":self.endDateField};
+  NSDictionary *views = @{@"startDateLabel":self.startDateLabel, @"startDateField":self.startDateField, @"endDateLabel":self.endDateLabel, @"endDateField":self.endDateField, @"confirmDatesButton":self.confirmDatesButton};
   
   NSArray *startDateLabelHorizontalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[startDateLabel]-8-|" options:0 metrics:nil views:views];
   
@@ -100,6 +137,9 @@
   NSArray *endDateFieldVerticalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[endDateLabel]-8-[endDateField]" options:0 metrics:nil views:views];
   NSArray *endDateFieldHorizontalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[endDateField]-8-|" options:0 metrics:nil views:views];
   
+  NSArray *confirmDatesButtonVerticalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[confirmDatesButton]-8-|" options:0 metrics:nil views:views];
+  NSArray *confirmDatesButtonHorizontalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[confirmDatesButton]-8-|" options:0 metrics:nil views:views];
+  
   [self.rootView addConstraints:startDateLabelHorizontalConstraint];
   [self.rootView addConstraints:startDateFieldVerticalConstraint];
   [self.rootView addConstraints:startDateFieldHorizontalConstraint];
@@ -107,6 +147,8 @@
   [self.rootView addConstraints:endDateLabelHorizontalConstraint];
   [self.rootView addConstraints:endDateFieldVerticalConstraint];
   [self.rootView addConstraints:endDateFieldHorizontalConstraint];
+  [self.rootView addConstraints:confirmDatesButtonVerticalConstraint];
+  [self.rootView addConstraints:confirmDatesButtonHorizontalConstraint];
   
 }
 @end
