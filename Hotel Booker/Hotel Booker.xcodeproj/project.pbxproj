@@ -21,6 +21,7 @@
 		22DAD28F1B9E28ED00B0DE6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DAD28E1B9E28ED00B0DE6B /* Images.xcassets */; };
 		22DAD2921B9E28ED00B0DE6B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DAD2901B9E28ED00B0DE6B /* LaunchScreen.xib */; };
 		22DAD29E1B9E28ED00B0DE6B /* Hotel_BookerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DAD29D1B9E28ED00B0DE6B /* Hotel_BookerTests.m */; };
+		22F852C41BA0911E00DC562D /* CreateReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F852C31BA0911E00DC562D /* CreateReservationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		22DAD2971B9E28ED00B0DE6B /* Hotel BookerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hotel BookerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DAD29C1B9E28ED00B0DE6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22DAD29D1B9E28ED00B0DE6B /* Hotel_BookerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hotel_BookerTests.m; sourceTree = "<group>"; };
+		22F852C21BA0911E00DC562D /* CreateReservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateReservationViewController.h; sourceTree = "<group>"; };
+		22F852C31BA0911E00DC562D /* CreateReservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateReservationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				22C3047E1B9F4AC200CEB49C /* RoomViewController.m */,
 				22C3048C1B9FF25D00CEB49C /* MainMenuViewController.h */,
 				22C3048D1B9FF25D00CEB49C /* MainMenuViewController.m */,
+				22F852C21BA0911E00DC562D /* CreateReservationViewController.h */,
+				22F852C31BA0911E00DC562D /* CreateReservationViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				22C304821B9F56D500CEB49C /* Reservation.m in Sources */,
 				22C3047F1B9F4AC200CEB49C /* RoomViewController.m in Sources */,
 				22DAD28A1B9E28ED00B0DE6B /* ViewController.m in Sources */,
+				22F852C41BA0911E00DC562D /* CreateReservationViewController.m in Sources */,
 				22DAD2871B9E28ED00B0DE6B /* Hotel_Booker.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

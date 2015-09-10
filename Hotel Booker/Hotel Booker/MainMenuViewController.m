@@ -8,6 +8,7 @@
 
 #import "MainMenuViewController.h"
 #import "ViewController.h"
+#import "CreateReservationViewController.h"
 
 @interface MainMenuViewController ()
 
@@ -56,6 +57,10 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view.
+  NSDictionary *views = @{@"browseHotelsButton":self.browseHotelsButton,@"bookARoomButton":self.bookARoomButton,@"lookUpReservationButton":self.lookUpReservationsButton,@"topGuide":self.topLayoutGuide};
+  
+  NSArray *browseHotelsButtonVerticalLayout = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-8-[browseHotelsButton]" options:0 metrics:nil views:views];
+  [self.rootView addConstraints:browseHotelsButtonVerticalLayout];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,7 +73,8 @@
     ViewController *destination = [[ViewController alloc] init];
     [self.navigationController pushViewController:destination animated:true];
   } else if (sender == self.bookARoomButton) {
-    
+    CreateReservationViewController *destination = [[CreateReservationViewController alloc] init];
+    [self.navigationController pushViewController:destination animated:true];
   } else if (sender == self.lookUpReservationsButton) {
     
   }
@@ -77,7 +83,7 @@
 -(void)setAutoLayout {
   NSDictionary *views = @{@"browseHotelsButton":self.browseHotelsButton,@"bookARoomButton":self.bookARoomButton,@"lookUpReservationButton":self.lookUpReservationsButton};
   
-  NSArray *browseHotelsButtonVerticalLayout = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-100-[browseHotelsButton]" options:0 metrics:nil views:views];
+  
   NSArray *browseHotelsButtonHorizontalLayout = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[browseHotelsButton]-8-|" options:0 metrics:nil views:views];
   
   NSArray *bookARoomButtonVerticalLayout = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[browseHotelsButton]-8-[bookARoomButton]" options:0 metrics:nil views:views];
@@ -87,7 +93,7 @@
   NSArray *lookUpReservationButtonHorizontalLayout = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[lookUpReservationButton]-8-|" options:0 metrics:nil views:views];
   
   [self.rootView addConstraints:browseHotelsButtonHorizontalLayout];
-  [self.rootView addConstraints:browseHotelsButtonVerticalLayout];
+
   [self.rootView addConstraints:bookARoomButtonHorizontalLayout];
   [self.rootView addConstraints:bookARoomButtonVerticalLayout];
   [self.rootView addConstraints:lookUpReservationButtonHorizontalLayout];

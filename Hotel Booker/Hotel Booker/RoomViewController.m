@@ -42,11 +42,9 @@
   // Do any additional setup after loading the view.
   self.roomTableView.dataSource = self;
   self.appDelegate = [UIApplication sharedApplication].delegate;
+  [self.roomTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"RoomCell"];
   
   self.rooms = [[NSArray alloc] initWithArray:[self.hotel.rooms allObjects]];
-  NSLog(@"Room Count: %lu", (unsigned long)self.rooms.count);
-  
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,14 +59,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomCell"];
   
-  if (!cell) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"RoomCell"];
-  }
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RoomCell" forIndexPath:indexPath];
   
   Room *room = [self.rooms objectAtIndex:indexPath.row];
-
   cell.textLabel.text = [NSString stringWithFormat:@"%@",room.number];
   
   return cell;

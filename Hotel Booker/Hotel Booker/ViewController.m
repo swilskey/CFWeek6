@@ -49,11 +49,13 @@
   self.hotelTableView.dataSource = self;
   self.hotelTableView.delegate = self;
   
+  [self.hotelTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"HotelCell"];
+
+  
   NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
   
   NSError *fetchError;
   self.hotels = [self.appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:&fetchError];
-  NSLog(@"Hotels Count: %lu", (unsigned long)self.hotels.count);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,10 +79,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HotelCell"];
-  if (!cell) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"HotelCell"];
-  }
+  
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HotelCell" forIndexPath:indexPath];
+
   Hotel *hotel = [self.hotels objectAtIndex:indexPath.row];
   cell.textLabel.text = hotel.name;
   return cell;
