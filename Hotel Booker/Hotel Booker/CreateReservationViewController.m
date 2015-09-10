@@ -18,6 +18,8 @@
 @property (strong,nonatomic) UITextField *startDateField;
 @property (strong,nonatomic) UITextField *endDateField;
 @property (strong,nonatomic) UIBarButtonItem *barDoneButton;
+@property (strong,nonatomic) UITextField *firstNameField;
+@property (strong,nonatomic) UITextField *lastNameField;
 @property (strong,nonatomic) UIButton *confirmDatesButton;
 
 @property (strong,nonatomic) NSDate *startDate;
@@ -70,6 +72,18 @@
   [self.endDateField setTranslatesAutoresizingMaskIntoConstraints:false];
   [self.rootView addSubview:self.endDateField];
   
+  self.firstNameField = [[UITextField alloc] init];
+  self.firstNameField.borderStyle = UITextBorderStyleRoundedRect;
+  [self.firstNameField setPlaceholder:@"First Name"];
+  [self.firstNameField setTranslatesAutoresizingMaskIntoConstraints:false];
+  [self.rootView addSubview:self.firstNameField];
+  
+  self.lastNameField = [[UITextField alloc] init];
+  self.lastNameField.borderStyle = UITextBorderStyleRoundedRect;
+  [self.lastNameField setPlaceholder:@"Last Name"];
+  [self.lastNameField setTranslatesAutoresizingMaskIntoConstraints:false];
+  [self.rootView addSubview:self.lastNameField];
+  
   self.confirmDatesButton = [[UIButton alloc] init];
   [self.confirmDatesButton setTitle:@"Confirm Dates" forState:UIControlStateNormal];
   [self.confirmDatesButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -86,10 +100,10 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  NSDictionary *views = @{@"topGuide":self.topLayoutGuide, @"startDateLabel":self.startDateLabel};
+  NSDictionary *views = @{@"topGuide":self.topLayoutGuide, @"firstNameField":self.firstNameField};
   
-  NSArray *startLableVerticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-8-[startDateLabel]" options:0 metrics:nil views:views];
-  [self.rootView addConstraints:startLableVerticalConstraints];
+  NSArray *firstNameVerticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[topGuide]-8-[firstNameField]" options:0 metrics:nil views:views];
+  [self.rootView addConstraints:firstNameVerticalConstraints];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -124,8 +138,14 @@
 #pragma mark - Constraint Setups
 
 - (void)setUpConstraints {
-  NSDictionary *views = @{@"startDateLabel":self.startDateLabel, @"startDateField":self.startDateField, @"endDateLabel":self.endDateLabel, @"endDateField":self.endDateField, @"confirmDatesButton":self.confirmDatesButton};
+  NSDictionary *views = @{@"firstNameField":self.firstNameField, @"lastNameField":self.lastNameField, @"startDateLabel":self.startDateLabel, @"startDateField":self.startDateField, @"endDateLabel":self.endDateLabel, @"endDateField":self.endDateField, @"confirmDatesButton":self.confirmDatesButton};
   
+  NSArray *firstNameHorizontalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[firstNameField]-8-|" options:0 metrics:nil views:views];
+  
+  NSArray *lastNameVerticalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[firstNameField]-8-[lastNameField]" options:0 metrics:nil views:views];
+  NSArray *lastNameHorizontalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[lastNameField]-8-|" options:0 metrics:nil views:views];
+  
+  NSArray *startDateLableVerticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[lastNameField]-8-[startDateLabel]" options:0 metrics:nil views:views];
   NSArray *startDateLabelHorizontalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[startDateLabel]-8-|" options:0 metrics:nil views:views];
   
   NSArray *startDateFieldVerticalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[startDateLabel]-8-[startDateField]" options:0 metrics:nil views:views];
@@ -140,6 +160,10 @@
   NSArray *confirmDatesButtonVerticalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[confirmDatesButton]-8-|" options:0 metrics:nil views:views];
   NSArray *confirmDatesButtonHorizontalConstraint = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[confirmDatesButton]-8-|" options:0 metrics:nil views:views];
   
+  [self.rootView addConstraints:firstNameHorizontalConstraint];
+  [self.rootView addConstraints:lastNameVerticalConstraint];
+  [self.rootView addConstraints:lastNameHorizontalConstraint];
+  [self.rootView addConstraints:startDateLableVerticalConstraints];
   [self.rootView addConstraints:startDateLabelHorizontalConstraint];
   [self.rootView addConstraints:startDateFieldVerticalConstraint];
   [self.rootView addConstraints:startDateFieldHorizontalConstraint];
