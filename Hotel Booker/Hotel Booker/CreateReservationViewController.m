@@ -7,6 +7,8 @@
 //
 
 #import "CreateReservationViewController.h"
+#import "SelectAvailableRoomsViewController.h"
+#import "DateValidator.h"
 
 @interface CreateReservationViewController ()
 
@@ -132,7 +134,17 @@
 }
 
 - (void)confirmDatesAction:(UIButton *)sender {
-  
+  if ([DateValidator validRangeStartDate:self.startDate endDate:self.endDate]) {
+    SelectAvailableRoomsViewController *destination = [[SelectAvailableRoomsViewController alloc] init];
+    destination.startDate = self.startDate;
+    destination.endDate = self.endDate;
+    destination.firstName = self.firstNameField.text;
+    destination.lastName = self.lastNameField.text;
+    [self.navigationController pushViewController:destination animated:true];
+    
+  } else {
+    NSLog(@"Not Valid Dates");
+  }
 }
 
 #pragma mark - Constraint Setups
