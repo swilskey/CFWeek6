@@ -119,7 +119,7 @@
     [self.startDateField resignFirstResponder];
     self.startDate = self.datePicker.date;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"cccc, MMM d, hh:mm aa"];
+    [dateFormat setDateFormat:@"cccc, MMM d"];
     NSString *prettyVersion = [dateFormat stringFromDate:self.startDate];
     self.startDateField.text = prettyVersion;
   } else if ([self.endDateField isFirstResponder]) {
@@ -127,7 +127,7 @@
     [self.endDateField resignFirstResponder];
     self.endDate = self.datePicker.date;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"cccc, MMM d, hh:mm aa"];
+    [dateFormat setDateFormat:@"cccc, MMM d"];
     NSString *prettyVersion = [dateFormat stringFromDate:self.endDate];
     self.endDateField.text = prettyVersion;
   }

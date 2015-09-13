@@ -12,7 +12,8 @@
 
 @implementation Guest
 
-@dynamic name;
+@dynamic firstName;
+@dynamic lastName;
 @dynamic reservation;
 
 @end

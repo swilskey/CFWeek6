@@ -8,6 +8,7 @@
 
 #import "RoomViewController.h"
 #import "Room.h"
+#import "Hotel.h"
 #import "AppDelegate.h"
 
 @interface RoomViewController() <UITableViewDataSource>

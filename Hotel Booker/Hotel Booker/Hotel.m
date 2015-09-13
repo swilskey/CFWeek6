@@ -7,8 +7,6 @@
 //
 
 #import "Hotel.h"
-#import "Room.h"
-
 
 @implementation Hotel
 

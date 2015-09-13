@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221167F31BA27F1E00019F9D /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 221167F11BA27F1E00019F9D /* Reservation.m */; settings = {ASSET_TAGS = (); }; };
 		22222F871BA21BA1008305D0 /* DateValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 22222F861BA21BA1008305D0 /* DateValidator.m */; settings = {ASSET_TAGS = (); }; };
 		22222F8A1BA21BB6008305D0 /* ReservationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 22222F891BA21BB6008305D0 /* ReservationService.m */; settings = {ASSET_TAGS = (); }; };
 		22C304711B9F3BDB00CEB49C /* Guest.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C304701B9F3BDB00CEB49C /* Guest.m */; };
 		22C3047F1B9F4AC200CEB49C /* RoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C3047E1B9F4AC200CEB49C /* RoomViewController.m */; };
-		22C304821B9F56D500CEB49C /* Reservation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C304811B9F56D500CEB49C /* Reservation.m */; };
 		22C304841B9FEAFC00CEB49C /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 22C304831B9FEAFC00CEB49C /* hotels.json */; };
 		22C304881B9FED2B00CEB49C /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C304871B9FED2B00CEB49C /* Room.m */; };
-		22C3048B1B9FED4B00CEB49C /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C3048A1B9FED4B00CEB49C /* Hotel.m */; };
 		22C3048E1B9FF25D00CEB49C /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C3048D1B9FF25D00CEB49C /* MainMenuViewController.m */; };
 		22D807C21BA12C2E0028F625 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D807C11BA12C2E0028F625 /* CoreDataStack.m */; };
 		22DAD2811B9E28ED00B0DE6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DAD2801B9E28ED00B0DE6B /* main.m */; };
@@ -24,8 +23,17 @@
 		22DAD28F1B9E28ED00B0DE6B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22DAD28E1B9E28ED00B0DE6B /* Images.xcassets */; };
 		22DAD2921B9E28ED00B0DE6B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22DAD2901B9E28ED00B0DE6B /* LaunchScreen.xib */; };
 		22DAD29E1B9E28ED00B0DE6B /* Hotel_BookerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DAD29D1B9E28ED00B0DE6B /* Hotel_BookerTests.m */; };
+		22DBE67B1BA3819B000D1798 /* ConfirmReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DBE67A1BA3819B000D1798 /* ConfirmReservationViewController.m */; settings = {ASSET_TAGS = (); }; };
+		22DBE67E1BA49EA0000D1798 /* LookUpReservationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DBE67D1BA49EA0000D1798 /* LookUpReservationsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		22DBE6821BA5DEBE000D1798 /* HashTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DBE6811BA5DEBE000D1798 /* HashTable.m */; settings = {ASSET_TAGS = (); }; };
+		22DBE6861BA5DF8B000D1798 /* Bucket.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DBE6851BA5DF8B000D1798 /* Bucket.m */; settings = {ASSET_TAGS = (); }; };
+		22DBE6931BA6138A000D1798 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DBE6921BA6138A000D1798 /* CoreData.framework */; };
+		22DBE6951BA61395000D1798 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DBE6941BA61395000D1798 /* SystemConfiguration.framework */; };
+		22DBE6971BA613A6000D1798 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DBE6961BA613A6000D1798 /* libz.tbd */; };
+		22DBE6991BA613B2000D1798 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 22DBE6981BA613B2000D1798 /* libsqlite3.tbd */; };
 		22F852C41BA0911E00DC562D /* CreateReservationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F852C31BA0911E00DC562D /* CreateReservationViewController.m */; };
 		22FD1D771BA24D2600E6025C /* SelectAvailableRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FD1D761BA24D2600E6025C /* SelectAvailableRoomsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		22FDC6F51BA285C900CFA809 /* Hotel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22FDC6F41BA285C900CFA809 /* Hotel.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221167F01BA27F1E00019F9D /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reservation.h; sourceTree = "<group>"; };
+		221167F11BA27F1E00019F9D /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reservation.m; sourceTree = "<group>"; };
 		22222F851BA21BA1008305D0 /* DateValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateValidator.h; sourceTree = "<group>"; };
 		22222F861BA21BA1008305D0 /* DateValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateValidator.m; sourceTree = "<group>"; };
 		22222F881BA21BB6008305D0 /* ReservationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReservationService.h; sourceTree = "<group>"; };
@@ -47,13 +57,9 @@
 		22C304701B9F3BDB00CEB49C /* Guest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guest.m; sourceTree = "<group>"; };
 		22C3047D1B9F4AC200CEB49C /* RoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomViewController.h; sourceTree = "<group>"; };
 		22C3047E1B9F4AC200CEB49C /* RoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomViewController.m; sourceTree = "<group>"; };
-		22C304801B9F56D500CEB49C /* Reservation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reservation.h; sourceTree = "<group>"; };
-		22C304811B9F56D500CEB49C /* Reservation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reservation.m; sourceTree = "<group>"; };
 		22C304831B9FEAFC00CEB49C /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hotels.json; sourceTree = "<group>"; };
 		22C304861B9FED2B00CEB49C /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
 		22C304871B9FED2B00CEB49C /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
-		22C304891B9FED4B00CEB49C /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
-		22C3048A1B9FED4B00CEB49C /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
 		22C3048C1B9FF25D00CEB49C /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		22C3048D1B9FF25D00CEB49C /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		22D807C01BA12C2E0028F625 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
@@ -71,10 +77,34 @@
 		22DAD2971B9E28ED00B0DE6B /* Hotel BookerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hotel BookerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22DAD29C1B9E28ED00B0DE6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22DAD29D1B9E28ED00B0DE6B /* Hotel_BookerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hotel_BookerTests.m; sourceTree = "<group>"; };
+		22DBE6791BA3819B000D1798 /* ConfirmReservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmReservationViewController.h; sourceTree = "<group>"; };
+		22DBE67A1BA3819B000D1798 /* ConfirmReservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmReservationViewController.m; sourceTree = "<group>"; };
+		22DBE67C1BA49EA0000D1798 /* LookUpReservationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LookUpReservationsViewController.h; sourceTree = "<group>"; };
+		22DBE67D1BA49EA0000D1798 /* LookUpReservationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LookUpReservationsViewController.m; sourceTree = "<group>"; };
+		22DBE6801BA5DEBE000D1798 /* HashTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HashTable.h; sourceTree = "<group>"; };
+		22DBE6811BA5DEBE000D1798 /* HashTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HashTable.m; sourceTree = "<group>"; };
+		22DBE6841BA5DF8B000D1798 /* Bucket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bucket.h; sourceTree = "<group>"; };
+		22DBE6851BA5DF8B000D1798 /* Bucket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bucket.m; sourceTree = "<group>"; };
+		22DBE6881BA61361000D1798 /* GAI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		22DBE6891BA61361000D1798 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		22DBE68A1BA61361000D1798 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		22DBE68B1BA61361000D1798 /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		22DBE68C1BA61361000D1798 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		22DBE68D1BA61361000D1798 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		22DBE68E1BA61361000D1798 /* GAIFields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		22DBE68F1BA61361000D1798 /* GAILogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		22DBE6901BA61361000D1798 /* GAITrackedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		22DBE6911BA61361000D1798 /* GAITracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		22DBE6921BA6138A000D1798 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		22DBE6941BA61395000D1798 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		22DBE6961BA613A6000D1798 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		22DBE6981BA613B2000D1798 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		22F852C21BA0911E00DC562D /* CreateReservationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateReservationViewController.h; sourceTree = "<group>"; };
 		22F852C31BA0911E00DC562D /* CreateReservationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateReservationViewController.m; sourceTree = "<group>"; };
 		22FD1D751BA24D2600E6025C /* SelectAvailableRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectAvailableRoomsViewController.h; sourceTree = "<group>"; };
 		22FD1D761BA24D2600E6025C /* SelectAvailableRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectAvailableRoomsViewController.m; sourceTree = "<group>"; };
+		22FDC6F31BA285C900CFA809 /* Hotel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hotel.h; sourceTree = "<group>"; };
+		22FDC6F41BA285C900CFA809 /* Hotel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hotel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +112,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DBE6991BA613B2000D1798 /* libsqlite3.tbd in Frameworks */,
+				22DBE6971BA613A6000D1798 /* libz.tbd in Frameworks */,
+				22DBE6951BA61395000D1798 /* SystemConfiguration.framework in Frameworks */,
+				22DBE6931BA6138A000D1798 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,12 +132,12 @@
 		22C304681B9F3B8500CEB49C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				22C304891B9FED4B00CEB49C /* Hotel.h */,
-				22C3048A1B9FED4B00CEB49C /* Hotel.m */,
+				22FDC6F31BA285C900CFA809 /* Hotel.h */,
+				22FDC6F41BA285C900CFA809 /* Hotel.m */,
+				221167F01BA27F1E00019F9D /* Reservation.h */,
+				221167F11BA27F1E00019F9D /* Reservation.m */,
 				22C304861B9FED2B00CEB49C /* Room.h */,
 				22C304871B9FED2B00CEB49C /* Room.m */,
-				22C304801B9F56D500CEB49C /* Reservation.h */,
-				22C304811B9F56D500CEB49C /* Reservation.m */,
 				22C3046F1B9F3BDB00CEB49C /* Guest.h */,
 				22C304701B9F3BDB00CEB49C /* Guest.m */,
 			);
@@ -123,6 +157,10 @@
 				22F852C31BA0911E00DC562D /* CreateReservationViewController.m */,
 				22FD1D751BA24D2600E6025C /* SelectAvailableRoomsViewController.h */,
 				22FD1D761BA24D2600E6025C /* SelectAvailableRoomsViewController.m */,
+				22DBE6791BA3819B000D1798 /* ConfirmReservationViewController.h */,
+				22DBE67A1BA3819B000D1798 /* ConfirmReservationViewController.m */,
+				22DBE67C1BA49EA0000D1798 /* LookUpReservationsViewController.h */,
+				22DBE67D1BA49EA0000D1798 /* LookUpReservationsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -146,6 +184,7 @@
 				22DAD27D1B9E28ED00B0DE6B /* Hotel Booker */,
 				22DAD29A1B9E28ED00B0DE6B /* Hotel BookerTests */,
 				22DAD27C1B9E28ED00B0DE6B /* Products */,
+				22DBE6871BA61340000D1798 /* Libraries */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +205,7 @@
 				22C3047B1B9F3CDE00CEB49C /* Controller */,
 				22C304681B9F3B8500CEB49C /* Model */,
 				22D807BF1BA12BED0028F625 /* Services */,
+				22DBE67F1BA5DE8C000D1798 /* Code Challenges */,
 				22DAD2851B9E28ED00B0DE6B /* Hotel_Booker.xcdatamodeld */,
 				22DAD27E1B9E28ED00B0DE6B /* Supporting Files */,
 			);
@@ -199,6 +239,38 @@
 				22DAD29C1B9E28ED00B0DE6B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22DBE67F1BA5DE8C000D1798 /* Code Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				22DBE6801BA5DEBE000D1798 /* HashTable.h */,
+				22DBE6811BA5DEBE000D1798 /* HashTable.m */,
+				22DBE6841BA5DF8B000D1798 /* Bucket.h */,
+				22DBE6851BA5DF8B000D1798 /* Bucket.m */,
+			);
+			name = "Code Challenges";
+			sourceTree = "<group>";
+		};
+		22DBE6871BA61340000D1798 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				22DBE6981BA613B2000D1798 /* libsqlite3.tbd */,
+				22DBE6961BA613A6000D1798 /* libz.tbd */,
+				22DBE6941BA61395000D1798 /* SystemConfiguration.framework */,
+				22DBE6921BA6138A000D1798 /* CoreData.framework */,
+				22DBE6881BA61361000D1798 /* GAI.h */,
+				22DBE6891BA61361000D1798 /* GAIDictionaryBuilder.h */,
+				22DBE68A1BA61361000D1798 /* GAIEcommerceFields.h */,
+				22DBE68B1BA61361000D1798 /* GAIEcommerceProduct.h */,
+				22DBE68C1BA61361000D1798 /* GAIEcommerceProductAction.h */,
+				22DBE68D1BA61361000D1798 /* GAIEcommercePromotion.h */,
+				22DBE68E1BA61361000D1798 /* GAIFields.h */,
+				22DBE68F1BA61361000D1798 /* GAILogger.h */,
+				22DBE6901BA61361000D1798 /* GAITrackedViewController.h */,
+				22DBE6911BA61361000D1798 /* GAITracker.h */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,18 +373,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DBE67E1BA49EA0000D1798 /* LookUpReservationsViewController.m in Sources */,
 				22222F871BA21BA1008305D0 /* DateValidator.m in Sources */,
-				22C3048B1B9FED4B00CEB49C /* Hotel.m in Sources */,
 				22C304711B9F3BDB00CEB49C /* Guest.m in Sources */,
 				22DAD2841B9E28ED00B0DE6B /* AppDelegate.m in Sources */,
+				22FDC6F51BA285C900CFA809 /* Hotel.m in Sources */,
 				22DAD2811B9E28ED00B0DE6B /* main.m in Sources */,
+				22DBE6821BA5DEBE000D1798 /* HashTable.m in Sources */,
 				22C3048E1B9FF25D00CEB49C /* MainMenuViewController.m in Sources */,
 				22C304881B9FED2B00CEB49C /* Room.m in Sources */,
-				22C304821B9F56D500CEB49C /* Reservation.m in Sources */,
 				22C3047F1B9F4AC200CEB49C /* RoomViewController.m in Sources */,
 				22FD1D771BA24D2600E6025C /* SelectAvailableRoomsViewController.m in Sources */,
 				22DAD28A1B9E28ED00B0DE6B /* ViewController.m in Sources */,
+				221167F31BA27F1E00019F9D /* Reservation.m in Sources */,
 				22222F8A1BA21BB6008305D0 /* ReservationService.m in Sources */,
+				22DBE6861BA5DF8B000D1798 /* Bucket.m in Sources */,
+				22DBE67B1BA3819B000D1798 /* ConfirmReservationViewController.m in Sources */,
 				22F852C41BA0911E00DC562D /* CreateReservationViewController.m in Sources */,
 				22DAD2871B9E28ED00B0DE6B /* Hotel_Booker.xcdatamodeld in Sources */,
 				22D807C21BA12C2E0028F625 /* CoreDataStack.m in Sources */,

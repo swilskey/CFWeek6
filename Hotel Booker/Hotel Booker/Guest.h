@@ -13,7 +13,8 @@
 
 @interface Guest : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) Reservation *reservation;
 
 @end

@@ -2,8 +2,8 @@
 //  Reservation.h
 //  Hotel Booker
 //
-//  Created by Sam Wilskey on 9/8/15.
-//  Copyright (c) 2015 Wilskey Labs. All rights reserved.
+//  Created by Sam Wilskey on 9/10/15.
+//  Copyright © 2015 Wilskey Labs. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,8 +13,9 @@
 
 @interface Reservation : NSManagedObject
 
-@property (nonatomic, retain) NSDate * date;
-@property (nonatomic, retain) Guest *guest;
-@property (nonatomic, retain) Room *room;
+@property (nullable, nonatomic, retain) NSDate *endDate;
+@property (nullable, nonatomic, retain) NSDate *startDate;
+@property (nullable, nonatomic, retain) Guest *guest;
+@property (nullable, nonatomic, retain) Room *room;
 
 @end

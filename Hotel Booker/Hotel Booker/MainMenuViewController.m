@@ -9,6 +9,7 @@
 #import "MainMenuViewController.h"
 #import "ViewController.h"
 #import "CreateReservationViewController.h"
+#import "LookUpReservationsViewController.h"
 
 @interface MainMenuViewController ()
 
@@ -76,7 +77,8 @@
     CreateReservationViewController *destination = [[CreateReservationViewController alloc] init];
     [self.navigationController pushViewController:destination animated:true];
   } else if (sender == self.lookUpReservationsButton) {
-    
+    LookUpReservationsViewController *destination = [[LookUpReservationsViewController alloc] init];
+    [self.navigationController pushViewController:destination animated:true];
   }
 }
 
