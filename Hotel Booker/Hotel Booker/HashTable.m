@@ -50,7 +50,7 @@
   return nil;
 }
 
--(id)removeObjectForKey:(NSString *)key {
+- (id)removeObjectForKey:(NSString *)key {
   NSInteger index = [self hash:key];
   
   Bucket *bucket = self.items[index];
@@ -80,6 +80,23 @@
     bucket = bucket.next;
   }
   return nil;
+}
+
+- (void)addObject:(id)object forKey:(NSString *)key {
+  [self removeObjectForKey:key];
+  NSInteger index = [self hash:key];
+  
+  Bucket *bucket = self.items[index];
+  
+  if (!bucket.next) {
+    bucket.key = key;
+    bucket.value = object;
+  } else {
+    Bucket *newBucket = [[Bucket alloc] init];
+    newBucket.next = bucket;
+    newBucket.key = key;
+    newBucket.value = object;
+  }
 }
 
 @end
